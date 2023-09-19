@@ -1,8 +1,8 @@
 import streamlit as st
-import Thay_the
+import Substitution
 
-key_pi = Thay_the.key_pi
-key = Thay_the.key
+key_pi = Substitution.key_pi
+key = Substitution.key
 st.title("Mã hóa Thay thế")
 st.info("Bạn có thể nhập bản rõ hoặc chọn file .txt")
 
@@ -15,13 +15,13 @@ with st.form("Form 1"):
         tab1, tab2 = st.tabs(["Encrypt", "Decrypt"])
         with tab1:
             st.write("Bản mã hóa : " )
-            st.code(Thay_the.encrypt(text= text,key=key, key_pi=key_pi)) 
+            st.code(Substitution.encrypt(text= text,key=key, key_pi=key_pi)) 
         with tab2:
             st.write("Bản giải mã : " )
-            st.code(Thay_the.decrypt(text= text, key_pi=key_pi, key=key)) 
+            st.code(Substitution.decrypt(text= text, key_pi=key_pi, key=key)) 
             
-key_pi = Thay_the.key_pi
-key = Thay_the.key
+key_pi = Substitution.key_pi
+key = Substitution.key
 
 with st.form("Form 2"):
     file = st.file_uploader("Upload file", type=["txt"])
@@ -33,11 +33,11 @@ with st.form("Form 2"):
         if st.session_state["options"] == "Encrypt":
             if file is not None:
                 content_encrypted = file.read().decode("utf-8")
-                content = Thay_the.encrypt(text= text,key=key, key_pi=key_pi)
+                content = Substitution.encrypt(text= text,key=key, key_pi=key_pi)
         if st.session_state["options"] == "Decrypt":
             if file is not None:
                 content_decrypted = file.read().decode("utf-8")
-                content = Thay_the.decrypt(text= text, key_pi=key_pi, key=key)
+                content = Substitution.decrypt(text= text, key_pi=key_pi, key=key)
         st.success("Mã hóa file thành công !!")
 if submit:
     st.download_button(
