@@ -5,5 +5,7 @@
 ` pip install streamlit `
 ## Chạy chương trình
 ` streamlit run 1_Hompage.py `  
+  
 Bạn sẽ truy cập vào giao diện chính. Sau đó sẽ chọn các loại mật mã theo danh mục    
+  
 ![picture alt](https://github.com/namhai03/Ma_hoa/blob/main/images/Screenshot%202023-09-19%20164823.png)
